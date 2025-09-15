@@ -1,3 +1,7 @@
+__import__('pysqlite3')
+import sys
+sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
+
 from product_matching import find_product_semantic_match
 from store_product import store_products_in_chromedb
 from Invoice_generation import generate_invoice
